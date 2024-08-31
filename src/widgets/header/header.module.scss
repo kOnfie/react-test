@@ -1,0 +1,14 @@
+.header {
+  padding: 20px 0;
+
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+
+  border-bottom: 1px solid var(--main-border-color);
+  &__link {
+    &.active {
+      color: blue;
+    }
+  }
+}

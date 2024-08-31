@@ -1,0 +1,14 @@
+.link {
+  color: var(--link-text-color);
+  font-size: 14px;
+
+  padding: 14px 67px;
+
+  border: 1px solid var(--link-border-color);
+
+  transition: all 0.3s;
+
+  &.active {
+    background-color: var(--active-link-bg);
+  }
+}
