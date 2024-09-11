@@ -1,14 +1,14 @@
-type Status = {
+export type Status = {
   name: string;
   value: string;
 };
 
-type Department = {
+export type Department = {
   name: string;
   value: string;
 };
 
-type Country = {
+export type Country = {
   name: string;
   value: string;
 };

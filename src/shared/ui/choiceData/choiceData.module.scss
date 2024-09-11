@@ -2,21 +2,23 @@
   label {
     display: grid;
   }
-  position: relative;
 
+  position: relative;
   width: min(31.25rem, 100%);
 
   span {
-    color: #5e626b;
+    color: var(--secondary-text-color);
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
     line-height: 142.8%;
+    margin-bottom: 0.25rem;
   }
 
   select {
-    color: #5e626b;
+    color: var(--secondary-text-color);
     font-size: 0.875rem;
+    font-family: var(--rubik-font);
 
     padding: 0.875rem 1.5rem;
     border: 1px solid #e3e8ee;
@@ -25,9 +27,9 @@
       outline: none;
     }
 
-    appearance: none; /* Видаляє стандартний стиль */
-    -webkit-appearance: none; /* Для WebKit-браузерів */
-    -moz-appearance: none; /* Для Firefox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 
   &_icon {

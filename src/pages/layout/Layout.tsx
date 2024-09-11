@@ -10,7 +10,9 @@ const Layout: FC = () => {
     <>
       <Header />
       <main className={s.main}>
-        <Outlet />
+        <div className={s.main_wrapper}>
+          <Outlet />
+        </div>
       </main>
     </>
   );

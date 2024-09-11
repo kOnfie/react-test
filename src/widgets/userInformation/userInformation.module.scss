@@ -1,0 +1,18 @@
+.userInformation {
+  margin-top: 3.75rem;
+  margin-bottom: 2.5rem;
+
+  &_title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  &_block {
+    margin-top: 2.5rem;
+
+    display: grid;
+    row-gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
