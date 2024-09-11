@@ -3,11 +3,13 @@ import { Outlet } from 'react-router-dom';
 
 import Header from 'src/widgets/header/Header';
 
+import s from './layout.module.scss';
+
 const Layout: FC = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className={s.main}>
         <Outlet />
       </main>
     </>
