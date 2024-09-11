@@ -1,0 +1,48 @@
+.choiceData {
+  label {
+    display: grid;
+  }
+  position: relative;
+
+  width: min(31.25rem, 100%);
+
+  span {
+    color: #5e626b;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 142.8%;
+  }
+
+  select {
+    color: #5e626b;
+    font-size: 0.875rem;
+
+    padding: 0.875rem 1.5rem;
+    border: 1px solid #e3e8ee;
+
+    &:focus {
+      outline: none;
+    }
+
+    appearance: none; /* Видаляє стандартний стиль */
+    -webkit-appearance: none; /* Для WebKit-браузерів */
+    -moz-appearance: none; /* Для Firefox */
+  }
+
+  &_icon {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.3125rem;
+    z-index: 2;
+
+    svg {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+}
