@@ -1,21 +1,11 @@
-export type Status = {
-  name: string;
-  value: string;
-};
-
-export type Department = {
-  name: string;
-  value: string;
-};
-
-export type Country = {
+export type DataUser = {
   name: string;
   value: string;
 };
 
 export interface User {
   name: string;
-  status: Status;
-  department: Department;
-  country: Country;
+  status: DataUser;
+  department: DataUser;
+  country: DataUser;
 }
