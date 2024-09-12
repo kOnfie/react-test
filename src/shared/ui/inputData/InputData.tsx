@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import s from './inputData.module.scss';
 
@@ -10,10 +10,24 @@ interface InputDataProps {
 }
 
 const InputData: FC<InputDataProps> = ({ title, type, placeholder, value }) => {
+  const [inputValue, setInputValue] = useState<string>(value);
+
+  useEffect(() => {
+    if (value) {
+      setInputValue(value);
+    }
+  }, [value]);
+
   return (
     <label className={s.inputData}>
       <span>{title}</span>
-      <input type={type} placeholder={placeholder} value={value} required />
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        required
+      />
     </label>
   );
 };

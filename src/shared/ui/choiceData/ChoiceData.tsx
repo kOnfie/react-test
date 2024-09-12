@@ -1,4 +1,5 @@
 import { ChangeEvent, FC, useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useAppDispatch } from 'src/shared/hooks/reduxHook';
 
 import { Icon } from 'src/shared/ui';
@@ -15,6 +16,7 @@ interface ChoiceDataProps {
 
 const ChoiceData: FC<ChoiceDataProps> = ({ title, data }) => {
   const [selectedValue, setSelectedValue] = useState<DataUser>(data[0] as DataUser);
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -22,6 +24,7 @@ const ChoiceData: FC<ChoiceDataProps> = ({ title, data }) => {
   }, [data]);
 
   const handleChoiceData = (e: ChangeEvent<HTMLSelectElement>) => {
+    console.log(title);
     if (title === 'User') {
       dispatch(addUserName(e.target.value));
 
@@ -33,11 +36,14 @@ const ChoiceData: FC<ChoiceDataProps> = ({ title, data }) => {
       return;
     }
 
-    const dataName = data.find((item) => (item as DataUser).value === e.target.value);
-    setSelectedValue({
-      value: e.target.value,
-      name: dataName?.name ?? '',
-    });
+    const dataItem = (data as DataUser[]).find((item) => item.value === e.target.value);
+
+    if (dataItem) {
+      setSelectedValue({
+        value: dataItem.value,
+        name: dataItem.name,
+      });
+    }
   };
 
   return (
@@ -48,14 +54,14 @@ const ChoiceData: FC<ChoiceDataProps> = ({ title, data }) => {
           {data.map((item) => {
             if (title === 'User') {
               return (
-                <option value={(item as User).name} key={(item as User).status.value}>
+                <option value={(item as User).name} key={uuidv4()}>
                   {(item as User).name}
                 </option>
               );
             } else {
               return (
-                <option value={(item as DataUser).value} key={(item as DataUser).value}>
-                  {item.name}
+                <option value={(item as DataUser).value} key={uuidv4()}>
+                  {(item as DataUser).name}
                 </option>
               );
             }
